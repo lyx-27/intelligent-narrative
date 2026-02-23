@@ -1,0 +1,142 @@
+{
+  "scenes": {
+    "cave_interior": {
+      "name": "洞窟内部",
+      "tags": ["石窟", "烛光", "壁画", "颜料台", "画具"],
+      "atmosphere": "昏暗而神秘",
+      "reference_murals": ["药师佛", "供养人像"],
+      "color_palette": ["赭石", "朱砂红", "石青", "墨黑"],
+      "lighting": "烛火摇曳，光影交错"
+    },
+    "temple_exterior": {
+      "name": "悬空寺外景",
+      "tags": ["黄土高原", "寺庙", "荒凉", "远山"],
+      "atmosphere": "苍凉辽阔",
+      "reference_murals": ["建筑背景", "山水元素"],
+      "color_palette": ["土黄", "灰褐", "天青"],
+      "lighting": "自然光，天空阴沉或晴朗"
+    },
+    "mural_closeup": {
+      "name": "壁画特写",
+      "tags": ["药师佛", "菩萨", "供养人", "线条", "色彩"],
+      "atmosphere": "庄严肃穆",
+      "reference_murals": ["药师佛消灾图", "十二药叉神将"],
+      "color_palette": ["朱砂红", "石青", "石绿", "金粉"],
+      "lighting": "均匀柔和"
+    },
+    "painting_process": {
+      "name": "绘画过程",
+      "tags": ["画师", "学徒", "颜料", "画笔", "底稿"],
+      "atmosphere": "专注而紧张",
+      "reference_murals": ["人物动态", "工具细节"],
+      "color_palette": ["朱砂", "石青", "赭石", "墨"],
+      "lighting": "侧光，突出手部动作"
+    },
+    "conflict_scene": {
+      "name": "冲突场景",
+      "tags": ["争执", "官兵", "乡绅", "紧张氛围"],
+      "atmosphere": "压抑而危险",
+      "reference_murals": ["人物表情", "动态姿态"],
+      "color_palette": ["暗红", "灰黑", "冷青"],
+      "lighting": "阴影重，对比强烈"
+    },
+    "fire_disaster": {
+      "name": "火灾场景",
+      "tags": ["火焰", "浓烟", "壁画", "救援"],
+      "atmosphere": "混乱而危急",
+      "reference_murals": ["火焰纹样", "动态构图"],
+      "color_palette": ["橙红", "黑烟", "赭石"],
+      "lighting": "火光照亮，明暗剧烈"
+    },
+    "ending_desolate": {
+      "name": "荒凉结局",
+      "tags": ["废墟", "残壁", "孤独", "远行"],
+      "atmosphere": "悲凉而空旷",
+      "reference_murals": ["残损壁画", "荒芜景象"],
+      "color_palette": ["灰褐", "土黄", "暗青"],
+      "lighting": "黄昏或阴天"
+    },
+    "ending_hopeful": {
+      "name": "希望结局",
+      "tags": ["完成的壁画", "光明", "人群", "庆祝"],
+      "atmosphere": "温暖而明亮",
+      "reference_murals": ["完整壁画", "人物群像"],
+      "color_palette": ["朱砂红", "金黄", "明青"],
+      "lighting": "阳光洒入"
+    }
+  },
+  "mural_style_references": {
+    "shaanbei_temple_mural": {
+      "period": "北宋/西夏时期",
+      "characteristics": [
+        "线条质朴有力，中原画风为基",
+        "色彩浓烈，对比强烈",
+        "人物形象生活化，带有民间气息",
+        "中原佛教与西夏/藏传影响交融",
+        "构图饱满，装饰性强",
+        "土红与白粉对比晕染，平面烘托"
+      ],
+      "typical_colors": {
+        "vermillion": "朱砂红 - 主色调，用于袈裟、背光",
+        "azurite": "石青 - 天空、水波、衣饰",
+        "malachite": "石绿 - 山石、植物",
+        "ochre": "赭石 - 肤色、土地、建筑",
+        "ink": "墨 - 线条、阴影、文字",
+        "gold": "金粉 - 背光、装饰、重点强调"
+      },
+      "techniques": [
+        "沥粉贴金 - 立体装饰",
+        "晕染 - 色彩过渡",
+        "勾线 - 墨线勾勒轮廓",
+        "平涂 - 大面积色块"
+      ]
+    }
+  },
+  "quest_to_scene_mapping": {
+    "Apprentice_Start": "cave_interior",
+    "Apprentice_Interact": "cave_interior",
+    "Apprentice_Interact_Continue": "conflict_scene",
+    "Apprentice_Work": "painting_process",
+    "Apprentice_Work_Reflect": "mural_closeup",
+    "Apprentice_Meet_Monk": "cave_interior",
+    "Apprentice_Talk_Monk": "temple_exterior",
+    "Apprentice_Observe_Mural": "mural_closeup",
+    "Apprentice_Continue_Work": "painting_process",
+    "Apprentice_Learn_Skill": "painting_process",
+    "Apprentice_Try_Paint": "painting_process",
+    "Apprentice_Discover_Secret": "mural_closeup",
+    "Apprentice_Safe_Choice": "painting_process",
+    "Apprentice_Bold_Choice": "painting_process",
+    "Apprentice_Confront_Master": "cave_interior",
+    "Apprentice_Keep_Secret": "cave_interior",
+    "Master_Start": "cave_interior",
+    "Master_Dismiss": "cave_interior",
+    "Master_Agree": "cave_interior",
+    "Master_Call_Apprentice": "cave_interior",
+    "Master_Draft": "painting_process",
+    "Master_Teach": "painting_process",
+    "Master_Compromise": "painting_process",
+    "Master_Recall": "mural_closeup",
+    "Master_Focus": "painting_process",
+    "Master_Strict": "painting_process",
+    "Master_Lenient": "painting_process",
+    "Master_Confess": "mural_closeup",
+    "Patron_Start": "cave_interior",
+    "Patron_Demand": "cave_interior",
+    "Patron_Test": "cave_interior",
+    "Patron_Inspect": "temple_exterior",
+    "Patron_Meet_Abbot": "temple_exterior",
+    "Patron_Bargain": "cave_interior",
+    "Patron_Appreciate": "cave_interior",
+    "Patron_See_Refugees": "temple_exterior",
+    "Patron_See_Mural": "mural_closeup",
+    "Patron_Watch_Paint": "painting_process",
+    "Fate_01_Conscription": "conflict_scene",
+    "Fate_02_Fire": "fire_disaster",
+    "ending_apprentice": "ending_desolate",
+    "ending_apprentice_awakening": "ending_hopeful",
+    "ending_apprentice_tradition": "ending_desolate",
+    "ending_master": "ending_desolate",
+    "ending_patron": "ending_hopeful"
+  }
+}

@@ -1,0 +1,424 @@
+{
+  "prologue": {
+    "introduction": "北宋年间，陕北，榆林镇外的悬空寺。宋夏边境的战火让这片土地满目疮痍，而这座新修的寺庙，成了方圆百里唯一的指望。今天，寺里最重要的一幅'药师佛消灾图'即将动工。洞窟里，颜料、画具已经备好，几位身份各异的人，正围绕着这面空白的墙壁，心思各异...",
+    "character_selection": {
+      "prompt": "你将成为他们中的一员，你选择成为谁？",
+      "options": {
+        "A": {
+          "text": "【学徒】阿石：十六岁，对一切充满好奇，渴望证明自己。",
+          "role_id": "player_as_apprentice"
+        },
+        "B": {
+          "text": "【画师】老丹青：经验丰富，但心事重重，只想着不出差错地完成工作。",
+          "role_id": "player_as_master"
+        },
+        "C": {
+          "text": "【香客】王乡绅：这次壁画的出资人，只关心这笔'投资'能否为自己换来福报和名望。",
+          "role_id": "player_as_patron"
+        }
+      }
+    }
+  },
+  "worldview": {
+    "title": "《残壁丹青》",
+    "era": "北宋时期 (约960-1127年)",
+    "location": "中国，陕北地区（以榆林、延安一带为原型）",
+    "social_context": "宋夏边境冲突不断，西夏势力逼近，边陲百姓饱受战乱之苦，纷纷向佛寺祈求庇护，但信仰在乱世中开始动摇。",
+    "art_style": "陕北宋代寺观壁画。特点：中原画风与西夏、藏传佛教影响交融，线条质朴有力，色彩浓烈，人物形象带有浓厚的生活气息。",
+    "core_theme": "在信仰崩塌的时代，人如何寻找存在的意义？艺术创作的本质是什么？"
+  },
+  "characters": {
+    "player_as_apprentice": {
+      "name": "阿石",
+      "role": "画工学徒，约16岁",
+      "background": "孤儿，被师傅收养。不识字，但有绘画天赋，对世界充满疑问。",
+      "goal": "成为像师傅一样，甚至超越师傅的画师；弄明白画画的真正意义。",
+      "internal_conflict": "崇拜师傅的技艺，但又隐约觉得师傅的画缺少了'灵魂'；在绘制神佛时，不断拷问神佛的价值。"
+    },
+    "player_as_master": {
+      "name": "老丹青",
+      "role": "主角的师傅，一位经验丰富的画工",
+      "background": "技艺高超，为人刻板、保守，内心固守着传统画工的规矩和尊严。年轻时曾因画了一幅'离经叛道'的作品而被逐出师门，从此变得保守。",
+      "goal": "安安稳稳地完成这幅壁画，不出差错，保住画工的饭碗和尊严。",
+      "internal_conflict": "内心深处仍怀念年轻时的创作激情，但害怕再次因'出格'而付出代价。",
+      "personality": "技艺高超，为人刻板、保守，内心固守着传统画工的规矩和尊严。",
+      "dialogue_function": "传授技艺、发布任务、作为主角前期挑战和反思的对象。",
+      "secret": "年轻时曾因画了一幅'离经叛道'的作品而被逐出师门，从此变得保守。"
+    },
+    "player_as_patron": {
+      "name": "王乡绅",
+      "role": "出资修缮寺庙的供养人",
+      "background": "精明、务实，对神佛没有多少敬畏，更关心画壁画能否为自己带来好名声和福报。",
+      "goal": "确保壁画按自己的意愿完成，为自己换来福报和名望。",
+      "internal_conflict": "在功利心和良知之间摇摆，偶尔会被真正的艺术和苦难触动。",
+      "personality": "精明、务实，对神佛没有多少敬畏，更关心画壁画能否为自己带来好名声和福报。",
+      "dialogue_function": "发布带有功利性要求的任务（比如'把我画得离佛祖近一点'），让主角见识到信仰背后的现实交易。",
+      "trigger_event": "可能会因为主角的画不符合他的心意而产生冲突。"
+    },
+    "young_monk": {
+      "name": "了尘",
+      "role": "寺庙里的小沙弥",
+      "personality": "天真、虔诚，对壁画上的故事深信不疑。",
+      "dialogue_function": "代表着最纯粹的信仰视角，通过与他的对话，主角可以了解到壁画的'官方'宗教故事版本，形成观念对比。",
+      "trigger_event": "可能会在主角迷茫时，送来一碗热粥，或提出一个天真的问题，引发主角深思。"
+    }
+  },
+  "story_lines": {
+    "player_as_apprentice": {
+      "start_quest": "Apprentice_Start",
+      "quests": {
+        "Apprentice_Start": {
+          "description": "你（阿石）站在师傅身后，紧张地攥着衣角。这是你第一次参与这么重要的壁画绘制。师傅【老丹青】正在和出钱的【王乡绅】说话，他俩似乎在争论着什么。你听不清细节，但气氛有些紧张。",
+          "guidance_prompt": "将你想说的话和行为输入在下列文本框",
+          "hidden_rules_for_llm": "用户可能会尝试与师傅或乡绅互动，也可能选择做自己的事。根据用户的输入，自然地生成一段过渡剧情。如果用户选择互动，将故事引导至'Apprentice_Interact'节点；如果用户选择工作，引导至'Apprentice_Work'节点。",
+          "next_quest_map": {
+            "interact": "Apprentice_Interact",
+            "work": "Apprentice_Work"
+          }
+        },
+        "Apprentice_Interact": {
+          "description": "你稍微走近了一些，隐约听到王乡绅在抱怨壁画的进度，而师傅则在强调艺术的严谨性。王乡绅看到你靠近，不悦地皱了皱眉。",
+          "guidance_prompt": "你接下来会怎么做？",
+          "hidden_rules_for_llm": "用户可能会选择继续偷听，或者道歉离开。引导故事走向'Apprentice_Interact_Continue'或'Apprentice_Work'。",
+          "next_quest_map": {
+            "continue_listen": "Apprentice_Interact_Continue",
+            "apologize_leave": "Apprentice_Work"
+          }
+        },
+        "Apprentice_Interact_Continue": {
+          "description": "你继续偷听，王乡绅的声音越来越大：'...我出的钱，画什么还不是我说了算！' 师傅气得胡子都翘起来了。",
+          "trigger_fate_event": "Fate_01_Conscription"
+        },
+        "Apprentice_Work": {
+          "description": "你默默地走到颜料台前，开始检查朱砂的成色。朱红色的粉末在你的指尖流淌，冰冷而细腻。",
+          "guidance_prompt": "你一边研磨着颜料，一边在想什么？",
+          "hidden_rules_for_llm": "用户可能会思考壁画的意义，或者师傅和乡绅的争执。引导故事走向'Apprentice_Work_Reflect'或'Apprentice_Meet_Monk'。",
+          "next_quest_map": {
+            "reflect": "Apprentice_Work_Reflect",
+            "look_around": "Apprentice_Meet_Monk"
+          }
+        },
+        "Apprentice_Work_Reflect": {
+          "description": "你心中充满了疑惑：画画究竟是为了什么？是为了神佛，是为了金钱，还是为了心中那一点点不甘？这时，你注意到洞窟角落里有一幅旧壁画，虽然斑驳，但依然能看出精湛的技艺。",
+          "guidance_prompt": "你想做什么？",
+          "hidden_rules_for_llm": "用户可能会选择观察旧壁画，或者继续工作。引导故事走向'Apprentice_Observe_Mural'或'Apprentice_Continue_Work'。",
+          "next_quest_map": {
+            "observe": "Apprentice_Observe_Mural",
+            "continue": "Apprentice_Continue_Work"
+          }
+        },
+        "Apprentice_Meet_Monk": {
+          "description": "你抬起头，看到小沙弥【了尘】端着一碗热粥走了过来。他笑着说：'阿石哥，师傅让我给你送粥来。你从早上就没吃东西了吧？'",
+          "guidance_prompt": "你会如何回应了尘？",
+          "hidden_rules_for_llm": "用户可能会接受粥并与了尘交谈，或者婉拒继续工作。引导故事走向'Apprentice_Talk_Monk'或'Apprentice_Continue_Work'。",
+          "next_quest_map": {
+            "talk": "Apprentice_Talk_Monk",
+            "refuse": "Apprentice_Continue_Work"
+          }
+        },
+        "Apprentice_Talk_Monk": {
+          "description": "你接过热粥，了尘在你身边坐下。他好奇地问：'阿石哥，你说药师佛真的能消灾吗？我听说外面又在打仗了...' 他的眼神中透着一丝不安。",
+          "guidance_prompt": "你会如何回答了尘的问题？",
+          "hidden_rules_for_llm": "用户可能会安慰了尘，或者表达自己的怀疑。这会影响relationship[young_monk]和internal_tendency。引导故事走向'Apprentice_Observe_Mural'。",
+          "next_quest_map": {
+            "comfort": "Apprentice_Observe_Mural",
+            "doubt": "Apprentice_Observe_Mural"
+          }
+        },
+        "Apprentice_Observe_Mural": {
+          "description": "你走到那幅旧壁画前，仔细端详。画中的药师佛面容慈悲，但你却从中看出了一丝...人性的温度？这和师傅教你的'规矩'似乎不太一样。突然，你听到师傅在叫你。",
+          "guidance_prompt": "你想做什么？",
+          "hidden_rules_for_llm": "用户可能会回应师傅，或者继续观察壁画。引导故事走向'Apprentice_Learn_Skill'或'Apprentice_Discover_Secret'。",
+          "next_quest_map": {
+            "respond": "Apprentice_Learn_Skill",
+            "continue_observe": "Apprentice_Discover_Secret"
+          }
+        },
+        "Apprentice_Continue_Work": {
+          "description": "你埋头继续研磨颜料，朱砂的红色越来越纯粹。师傅走过来，看了看你的工作，点了点头：'不错，手法稳了很多。'",
+          "guidance_prompt": "你想对师傅说什么？",
+          "hidden_rules_for_llm": "用户可能会请教师傅技艺，或者询问壁画的意义。引导故事走向'Apprentice_Learn_Skill'。",
+          "next_quest_map": {
+            "ask_skill": "Apprentice_Learn_Skill",
+            "ask_meaning": "Apprentice_Learn_Skill"
+          }
+        },
+        "Apprentice_Learn_Skill": {
+          "description": "师傅拿起画笔，在墙上勾勒出药师佛的轮廓。他的手法娴熟而精准，每一笔都恰到好处。'看好了，'他说，'画佛要心中有佛，但手上不能有佛。'",
+          "guidance_prompt": "你理解师傅的话吗？",
+          "hidden_rules_for_llm": "用户可能会表示理解或困惑。这会影响knowledge_gained。引导故事走向'Apprentice_Try_Paint'。",
+          "next_quest_map": {
+            "understand": "Apprentice_Try_Paint",
+            "confused": "Apprentice_Try_Paint"
+          }
+        },
+        "Apprentice_Try_Paint": {
+          "description": "师傅把画笔递给你：'来，你试试画佛祖的袈裟。记住，要用朱砂，但不能太浓。' 你接过画笔，手微微颤抖。这是你第一次在正式的壁画上作画。",
+          "guidance_prompt": "你会如何下笔？",
+          "hidden_rules_for_llm": "用户可能会谨慎模仿师傅，或者尝试加入自己的理解。这会影响后续剧情分支。",
+          "next_quest_map": {
+            "imitate": "Apprentice_Safe_Choice",
+            "innovate": "Apprentice_Bold_Choice"
+          }
+        },
+        "Apprentice_Discover_Secret": {
+          "description": "你继续观察旧壁画，突然发现墙角有一个小小的签名——那是师傅年轻时的笔迹！但这幅画的风格和师傅现在的画完全不同，充满了生命力和情感。你想起师傅说过的'规矩'，心中涌起疑惑。",
+          "guidance_prompt": "你想做什么？",
+          "hidden_rules_for_llm": "用户发现了师傅的秘密，这会解锁knowledge_gained['master_secret']。引导故事走向'Apprentice_Confront_Master'或'Apprentice_Keep_Secret'。",
+          "next_quest_map": {
+            "confront": "Apprentice_Confront_Master",
+            "keep_secret": "Apprentice_Keep_Secret"
+          }
+        },
+        "Apprentice_Safe_Choice": {
+          "description": "你小心翼翼地模仿师傅的笔法，一笔一笔地勾勒袈裟的褶皱。师傅在旁边看着，满意地点头：'不错，很稳。' 但你心中却有些空落落的——这真的是你想画的吗？",
+          "trigger_fate_event": "Fate_01_Conscription"
+        },
+        "Apprentice_Bold_Choice": {
+          "description": "你深吸一口气，想起刚才看到的旧壁画，决定加入一些自己的理解。你让袈裟的褶皱更加自然，仿佛真的在随风飘动。师傅皱起了眉头：'阿石，你这是...' 话还没说完，外面突然传来嘈杂的声音。",
+          "trigger_fate_event": "Fate_01_Conscription"
+        },
+        "Apprentice_Confront_Master": {
+          "description": "你鼓起勇气问师傅：'师傅，墙角那幅画...是您年轻时画的吗？为什么现在您不这样画了？' 师傅的脸色一变，沉默了很久，最后叹了口气：'有些事，你以后会明白的。'",
+          "trigger_fate_event": "Fate_01_Conscription"
+        },
+        "Apprentice_Keep_Secret": {
+          "description": "你决定把这个发现藏在心里。也许师傅有他的苦衷。你回到颜料台前，继续研磨朱砂，但心中对师傅的理解又深了一层。",
+          "trigger_fate_event": "Fate_01_Conscription"
+        }
+      }
+    },
+    "player_as_master": {
+      "start_quest": "Master_Start",
+      "quests": {
+        "Master_Start": {
+          "description": "你（老丹青）看着眼前这张年轻又难缠的脸。出钱的【王乡绅】又在提一些外行要求。你只想赶紧把他打发走，好在天黑前定好壁画的底稿。你的徒弟【阿石】站在不远处，似乎在偷听。",
+          "guidance_prompt": "你决定如何应对王乡绅？",
+          "hidden_rules_for_llm": "用户可能会选择强硬回绝或敷衍了事。引导故事走向'Master_Dismiss'或'Master_Agree'。",
+          "next_quest_map": {
+            "dismiss": "Master_Dismiss",
+            "agree": "Master_Agree"
+          }
+        },
+        "Master_Dismiss": {
+          "description": "你（老丹青）不耐烦地打断他：'王乡绅，这些老朽自有分寸，保证让你满意。' 王乡绅脸色一沉，但终究没有再说什么。他转身离去后，你注意到阿石正用一种复杂的眼神看着你。",
+          "guidance_prompt": "你接下来打算做什么？",
+          "hidden_rules_for_llm": "用户可能会开始画底稿，或者教导徒弟。引导故事走向'Master_Draft'或'Master_Teach'。",
+          "next_quest_map": {
+            "draft": "Master_Draft",
+            "teach": "Master_Teach"
+          }
+        },
+        "Master_Agree": {
+          "description": "你（老丹青）耐着性子敷衍他：'您说的是，您说的是，我一定照办。' 王乡绅得意地笑了笑，走了。你心中暗暗叹气——把供养人画得比佛祖还大，这不是胡闹吗？",
+          "guidance_prompt": "你会真的按他说的画吗？",
+          "hidden_rules_for_llm": "用户可能会选择妥协或坚持原则。引导故事走向'Master_Draft'或'Master_Compromise'。",
+          "next_quest_map": {
+            "insist": "Master_Draft",
+            "compromise": "Master_Compromise"
+          }
+        },
+        "Master_Draft": {
+          "description": "你拿起炭笔，开始在墙上勾勒药师佛的轮廓。多年的功力让你的手稳如磐石，每一笔都精准到位。但画着画着，你的思绪飘回了三十年前——那时候的你，也像阿石一样年轻气盛。",
+          "guidance_prompt": "你在想什么？",
+          "hidden_rules_for_llm": "用户可能会回忆往事或专注当下。引导故事走向'Master_Recall'或'Master_Focus'。",
+          "next_quest_map": {
+            "recall": "Master_Recall",
+            "focus": "Master_Focus"
+          }
+        },
+        "Master_Teach": {
+          "description": "你决定趁这个机会教阿石一些东西。你把他叫到墙前：'看好了，画佛要心中有佛，但手上不能有佛。' 阿石似懂非懂地点了点头。你把画笔递给他，让他试着画袈裟。",
+          "guidance_prompt": "你看着阿石的笔触，心中在想什么？",
+          "hidden_rules_for_llm": "用户可能会严格要求或放手让徒弟发挥。这会影响relationship和internal_tendency。",
+          "next_quest_map": {
+            "strict": "Master_Strict",
+            "lenient": "Master_Lenient"
+          }
+        },
+        "Master_Compromise": {
+          "description": "你违心地把供养人的位置画得更靠近佛祖，比例也稍微放大了一些。画着画着，你停下了笔——这不是你学画时师傅教你的规矩。但不这样做，王乡绅不会付钱，你和阿石就得饿肚子。",
+          "trigger_fate_event": "Fate_01_Conscription"
+        },
+        "Master_Recall": {
+          "description": "你想起了三十年前，你也曾在一面墙上画过一幅不一样的画——那幅画里的佛祖不是端坐莲台，而是走在田间地头，和百姓一起劳作。师傅看到后勃然大怒，将你逐出师门。从那以后，你再也没敢'出格'过。",
+          "guidance_prompt": "你会告诉阿石这段往事吗？",
+          "hidden_rules_for_llm": "用户可能会选择坦白或继续隐瞒。这会解锁knowledge_gained['master_past']。",
+          "next_quest_map": {
+            "confess": "Master_Confess",
+            "hide": "Master_Focus"
+          }
+        },
+        "Master_Focus": {
+          "description": "你甩了甩头，把杂念抛开，专注于眼前的壁画。药师佛的轮廓逐渐成形，庄严而慈悲。你对自己说：按规矩来，不会错的。",
+          "trigger_fate_event": "Fate_01_Conscription"
+        },
+        "Master_Strict": {
+          "description": "阿石的笔触有些生涩，但你注意到他在袈裟的褶皱上加了一些自己的理解。你皱起眉头：'不对，重来。画画讲的是规矩，不是你想怎么画就怎么画。' 阿石低下了头，但你看到他眼中有一丝不服。",
+          "trigger_fate_event": "Fate_01_Conscription"
+        },
+        "Master_Lenient": {
+          "description": "阿石的笔触虽然生涩，但你看到了一些不一样的东西——他画的袈裟褶皱更加自然，仿佛真的在随风飘动。你没有纠正他，而是默默地看着。也许...这孩子比你当年还有天赋。",
+          "trigger_fate_event": "Fate_01_Conscription"
+        },
+        "Master_Confess": {
+          "description": "你叹了口气，对阿石说：'你看到墙角那幅旧画了吗？那是我年轻时画的。' 阿石瞪大了眼睛。你继续说：'我师傅因为那幅画把我赶出了师门。从那以后，我就再也不敢...' 你没有说完，但阿石似乎明白了什么。",
+          "trigger_fate_event": "Fate_01_Conscription"
+        }
+      }
+    },
+    "player_as_patron": {
+      "start_quest": "Patron_Start",
+      "quests": {
+        "Patron_Start": {
+          "description": "你（王乡绅）花了大价钱请来这个【老丹青】画师，可他看起来总是一副爱答不理的样子。你必须得敲打敲打他，确保你的钱花得值。他的徒弟【阿石】似乎在偷听。",
+          "guidance_prompt": "你清了清嗓子，对他说道...",
+          "hidden_rules_for_llm": "用户可能会选择强调自己的要求或试探徒弟的才能。引导故事走向'Patron_Demand'或'Patron_Test'。",
+          "next_quest_map": {
+            "demand": "Patron_Demand",
+            "test": "Patron_Test"
+          }
+        },
+        "Patron_Demand": {
+          "description": "你（王乡绅）提高了嗓门：'丹青师傅，我再强调一遍，画里的供养人一定要画得比别人大！' 老丹青的脸色有些难看，但没有反驳。你满意地点了点头，决定四处转转。",
+          "guidance_prompt": "你打算去哪里看看？",
+          "hidden_rules_for_llm": "用户可能会巡视寺庙或去找住持。引导故事走向'Patron_Inspect'或'Patron_Meet_Abbot'。",
+          "next_quest_map": {
+            "inspect": "Patron_Inspect",
+            "find_abbot": "Patron_Meet_Abbot"
+          }
+        },
+        "Patron_Test": {
+          "description": "你（王乡绅）眼珠一转：'听说令徒【阿石】也很有天赋？不知能否让他也画上几笔？' 老丹青的眉头紧锁，但阿石的眼睛却亮了起来。",
+          "guidance_prompt": "你为什么想让阿石画？",
+          "hidden_rules_for_llm": "用户可能是想压价或者真的欣赏年轻人。引导故事走向'Patron_Bargain'或'Patron_Appreciate'。",
+          "next_quest_map": {
+            "bargain": "Patron_Bargain",
+            "appreciate": "Patron_Appreciate"
+          }
+        },
+        "Patron_Inspect": {
+          "description": "你在寺庙里转了一圈。香火稀疏，佛像上的金漆已经斑驳。你心中暗想：这年头，连佛祖都穷了。不过转念一想，越是这种时候，百姓越需要精神寄托——你这笔投资，稳赚不赔。",
+          "guidance_prompt": "你看到了什么？",
+          "hidden_rules_for_llm": "用户可能会注意到流民或旧壁画。引导故事走向'Patron_See_Refugees'或'Patron_See_Mural'。",
+          "next_quest_map": {
+            "refugees": "Patron_See_Refugees",
+            "mural": "Patron_See_Mural"
+          }
+        },
+        "Patron_Meet_Abbot": {
+          "description": "你找到了住持，一个面容枯瘦的老僧。他双手合十：'王施主，多谢您的慷慨布施。这幅壁画若能完成，必能保佑一方平安。' 你注意到他的僧袍已经打了好几个补丁。",
+          "guidance_prompt": "你会如何回应住持？",
+          "hidden_rules_for_llm": "用户可能会趁机提要求或表示关心。引导故事走向'Patron_See_Mural'。",
+          "next_quest_map": {
+            "demand_more": "Patron_See_Mural",
+            "show_concern": "Patron_See_Mural"
+          }
+        },
+        "Patron_Bargain": {
+          "description": "你压低声音对老丹青说：'既然徒弟也能画，那这工钱是不是该商量商量？毕竟一个师傅带一个徒弟，活儿干得快，钱也不该按两个人算吧？' 老丹青的脸涨得通红。",
+          "trigger_fate_event": "Fate_01_Conscription"
+        },
+        "Patron_Appreciate": {
+          "description": "你走到阿石身边，看着他研磨颜料的手法，点了点头：'年轻人，好好学。等你出师了，我还有别的活儿给你做。' 阿石有些受宠若惊，老丹青则面色复杂。",
+          "guidance_prompt": "你还想做什么？",
+          "hidden_rules_for_llm": "用户可能会继续巡视或回去盯着画师工作。引导故事走向'Patron_Inspect'或'Patron_Watch_Paint'。",
+          "next_quest_map": {
+            "inspect": "Patron_Inspect",
+            "watch": "Patron_Watch_Paint"
+          }
+        },
+        "Patron_See_Refugees": {
+          "description": "寺庙门外，几个衣衫褴褛的流民正蜷缩在墙角。一个妇人抱着孩子，眼神空洞。你心中一紧——去年你的佃户也跑了不少。这世道，人命不如草芥。",
+          "guidance_prompt": "你会怎么做？",
+          "hidden_rules_for_llm": "用户可能会施舍或视而不见。这会影响internal_tendency。引导故事走向'Patron_Watch_Paint'。",
+          "next_quest_map": {
+            "give_alms": "Patron_Watch_Paint",
+            "ignore": "Patron_Watch_Paint"
+          }
+        },
+        "Patron_See_Mural": {
+          "description": "你在洞窟深处发现了一幅旧壁画。虽然你不懂画，但也能感觉到这幅画和老丹青现在画的不太一样——更有生气，更像是...活的。墙角有个模糊的签名。",
+          "guidance_prompt": "你对这幅画有什么想法？",
+          "hidden_rules_for_llm": "用户可能会好奇追问或不以为意。这会解锁knowledge_gained['old_mural']。引导故事走向'Patron_Watch_Paint'。",
+          "next_quest_map": {
+            "curious": "Patron_Watch_Paint",
+            "dismiss": "Patron_Watch_Paint"
+          }
+        },
+        "Patron_Watch_Paint": {
+          "description": "你回到洞窟，看着老丹青和阿石在墙上作画。药师佛的轮廓逐渐成形。你盘算着：等壁画完成，再请几个文人来题诗，自己的名声就更响了。正想着，外面突然传来嘈杂的声音。",
+          "trigger_fate_event": "Fate_01_Conscription"
+        }
+      }
+    }
+  },
+  "fate_events": {
+    "Fate_01_Conscription": {
+      "title": "【命运时刻：时代的洪流】",
+      "description": "突然，寺庙外传来一阵嘈杂的脚步声和金属的碰撞声！一名小吏带着几个手持兵器的官兵闯了进来，他扫视着洞窟里的所有人，高声喊道：'奉朝廷之命，宋夏边境告急，紧急征兵，所有16岁以上、60岁以下的男丁，均有可能被征召入伍！'",
+      "prompt": "这突如其来的变故让你措手不及。官兵的目光在你和周围的人之间来回扫视。你该怎么办？！",
+      "options": {
+        "player_as_apprentice": {
+          "text": "（作为学徒）躲到师傅身后，希望他们不要注意到你。",
+          "outcome_description": "你的师傅将你护在身后，但官兵的目光已经锁定了你们...",
+          "next_ending": "ending_apprentice"
+        },
+        "player_as_master": {
+          "text": "（作为画师）立刻上前，对小吏塞一些银子，希望能破财消灾。",
+          "outcome_description": "小吏掂了掂银子，脸上露出了一丝难以捉摸的笑容...",
+          "next_ending": "ending_master"
+        },
+        "player_as_patron": {
+          "text": "（作为乡绅）亮出你的身份，呵斥官兵，试图用权势压人。",
+          "outcome_description": "小吏愣了一下，但随即冷笑道：'王乡绅？如今这世道，你的名头可不一定好使！'",
+          "next_ending": "ending_patron"
+        }
+      }
+    },
+    "Fate_02_Fire": {
+      "title": "【命运时刻：烈火焚心】",
+      "description": "征兵的风波刚过，夜幕降临。你正准备休息，突然闻到一股焦糊味——洞窟外的柴房着火了！火势借着夜风迅速蔓延，浓烟滚滚涌入洞窟。未完成的壁画就在墙上，而颜料台上还有大量易燃的桐油和松脂！",
+      "prompt": "火光映红了你的脸，你必须立刻做出选择！",
+      "options": {
+        "player_as_apprentice": {
+          "text": "（作为学徒）冲向壁画，试图用湿布保护未干的画面。",
+          "outcome_description": "你奋不顾身地扑向壁画，用浸湿的布匹覆盖住药师佛的面容。火焰灼烧着你的手臂，但你咬牙不放...",
+          "next_ending": "ending_apprentice_awakening"
+        },
+        "player_as_master": {
+          "text": "（作为画师）指挥众人搬走颜料和画具，保住吃饭的家伙。",
+          "outcome_description": "你大声呼喊着指挥阿石和了尘搬运颜料。朱砂、石青、石绿...这些都是你半辈子的积蓄。壁画可以重画，但这些颜料没了就真的没了...",
+          "next_ending": "ending_master"
+        },
+        "player_as_patron": {
+          "text": "（作为乡绅）立刻组织人手灭火，同时盘算损失和赔偿。",
+          "outcome_description": "你一边指挥寺里的僧人打水灭火，一边在心里飞速计算：修缮费用、壁画返工、工期延误...这把火烧掉的不只是木头，还有你的名声和银子。",
+          "next_ending": "ending_patron"
+        }
+      }
+    }
+  },
+  "endings": {
+    "ending_apprentice": {
+      "title": "学徒的迷茫",
+      "description": "官兵最终带走了几名年轻的香客，你和师傅侥幸逃过一劫。然而，刚才的惊变让你心神不宁。你看着未完成的壁画，心中充满了迷茫：在这乱世之中，画画真的能改变什么吗？你感到前所未有的无力。"
+    },
+    "ending_apprentice_awakening": {
+      "title": "觉醒",
+      "description": "征兵的风波过后，你重新拿起画笔。这一次，你不再完全遵循师傅的'规矩'，而是将自己对生命的理解融入笔端。壁画上的药师佛不再只是冰冷的神像，而是有了温度和情感。师傅看着你的画，眼中闪过一丝欣慰——也许，他年轻时的梦想，会在你身上延续。"
+    },
+    "ending_apprentice_tradition": {
+      "title": "传承",
+      "description": "你选择了安全的道路，严格遵循师傅教导的每一条规矩。壁画完成了，技法无可挑剔，但你心中总觉得少了些什么。多年后，你成为了一名技艺精湛的画工，但每当夜深人静，你总会想起那幅墙角的旧壁画，想起那个曾经充满疑问的少年。"
+    },
+    "ending_master": {
+      "title": "画师的无奈",
+      "description": "你塞给小吏的银子似乎起了作用，官兵最终没有为难你们。但你看着那些被强行带走的百姓，心中五味杂陈。在这个时代，连画画也变得如此艰难，你只能无奈地叹了口气，继续拿起画笔，只求能安稳度日。"
+    },
+    "ending_patron": {
+      "title": "乡绅的算计",
+      "description": "你的呵斥虽然没能完全镇住官兵，但他们最终还是离开了，没有在你这里招惹麻烦。你松了口气，但心中也明白，这世道变了，光靠财势已经不够了。你得开始为自己的未来做更长远的打算。"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+# Intelligent Narrative Demo\n\n这是一个智能叙事游戏的 Demo，包含 Vue 3 前端和 FastAPI 后端。\n\n## 部署说明\n\n### 后端部署 (Render)\n- 运行命令: `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`\n- Python 版本: 3.11\n\n### 前端部署 (Vercel)\n- 构建命令: `npm run build`\n- 输出目录: `dist`

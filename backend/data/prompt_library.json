@@ -1,0 +1,91 @@
+{
+  "base_style_prompt": "A scene in the style of Northern Song Dynasty (960-1127) Shaanbei temple mural painting. Characteristics: bold and powerful brushstrokes, intense color contrasts, folk art influence with Xixia/Tibetan Buddhist elements. Color palette: vermillion red (cinnabar), azurite blue, malachite green, ochre, ink black, gold leaf accents. Composition: full and decorative, with strong narrative clarity. Texture: aged wall surface with visible cracks and weathering.",
+
+  "scene_prompts": {
+    "cave_interior": {
+      "base": "Interior of a cave temple, dimly lit by flickering candlelight. Stone walls with partially completed murals visible in the background. Painting tools and pigment bowls arranged on a low table. Atmosphere: mysterious and sacred. Warm ochre and vermillion tones dominate, with deep shadows in corners.",
+      "variations": {
+        "empty": "Empty cave interior, waiting for the artists to arrive",
+        "with_people": "Cave interior with figures of master painter and apprentice, their silhouettes illuminated by candlelight",
+        "tense": "Cave interior with tense atmosphere, shadows looming large on walls"
+      }
+    },
+    "temple_exterior": {
+      "base": "Exterior view of Qingliang Temple on the Shaanbei loess plateau. Desolate landscape with rolling yellow hills in the background. Temple buildings with traditional Chinese architecture, weathered and simple. Sky either overcast or clear. Atmosphere: vast and melancholic.",
+      "variations": {
+        "dawn": "Temple at dawn, first light touching the yellow earth",
+        "dusk": "Temple at dusk, long shadows stretching across the courtyard",
+        "stormy": "Temple under stormy sky, wind sweeping across the plateau"
+      }
+    },
+    "mural_closeup": {
+      "base": "Close-up view of a Shaanbei temple mural depicting the Medicine Buddha (Bhaisajyaguru). Bold vermillion robes, azurite blue background with decorative patterns. Gold powder highlights on the halo. Rough brushstrokes visible, showing the folk art style. Facial expression serene yet humanized.",
+      "variations": {
+        "unfinished": "Partially completed mural, with sketch lines visible and some areas unpainted",
+        "detailed": "Highly detailed section showing intricate patterns and color layering",
+        "damaged": "Section of mural showing age damage, cracks, and faded colors"
+      }
+    },
+    "painting_process": {
+      "base": "Scene of mural painting in progress. Painter's hand holding a brush, applying vermillion pigment to the wall. Pigment bowls with vibrant colors (red, blue, green, ochre) in the foreground. Partially completed figure visible on the wall. Side lighting emphasizes the texture of brushstrokes and wall surface.",
+      "variations": {
+        "grinding_pigments": "Apprentice grinding cinnabar pigment in a stone mortar, fine red powder visible",
+        "sketching": "Master painter sketching outlines with charcoal on the white wall",
+        "applying_gold": "Delicate process of applying gold powder to the halo of a Buddha figure"
+      }
+    },
+    "conflict_scene": {
+      "base": "Tense confrontation scene inside the cave temple. Figures in shadow, with dramatic lighting creating strong contrasts. Official soldiers with weapons visible in the background. Atmosphere: oppressive and dangerous. Color palette shifts to darker tones - deep reds, grays, cold blues.",
+      "variations": {
+        "argument": "Heated argument between patron and painter, gestures animated",
+        "soldiers_arrive": "Soldiers bursting into the temple, disrupting the peace",
+        "hiding": "Figure hiding in shadows, fear palpable in the composition"
+      }
+    },
+    "fire_disaster": {
+      "base": "Temple fire scene with flames consuming wooden structures. Thick smoke billowing against the night sky. Figures rushing to save the murals. Orange and red firelight illuminating the chaos. Dramatic composition with strong diagonal lines suggesting movement and urgency.",
+      "variations": {
+        "outbreak": "Initial outbreak of fire, small flames beginning to spread",
+        "inferno": "Full inferno, temple engulfed in flames",
+        "aftermath": "Smoldering ruins after the fire, smoke still rising"
+      }
+    },
+    "ending_desolate": {
+      "base": "Desolate ending scene. Ruined temple with crumbling walls, partially destroyed murals still visible. Lone figure walking away into the distance across the barren plateau. Overcast sky, muted color palette of grays, browns, and faded ochre. Atmosphere: melancholic and empty.",
+      "variations": {
+        "ruins": "Close-up of ruined mural, beauty persisting despite damage",
+        "departure": "Figure's back as they leave the temple behind, heading toward uncertain horizon",
+        "remnants": "Fragments of the mural scattered on the ground, testament to lost glory"
+      }
+    },
+    "ending_hopeful": {
+      "base": "Hopeful ending scene. Completed mural in full glory, vibrant colors shining in sunlight streaming through the cave entrance. Small crowd of villagers admiring the work. Warm color palette dominated by vermillion, gold, and bright blues. Atmosphere: warm and triumphant.",
+      "variations": {
+        "completion": "Final brushstroke being applied to the completed mural",
+        "celebration": "Villagers gathered in celebration, incense smoke rising",
+        "legacy": "Years later, the mural still intact, new apprentices studying it"
+      }
+    }
+  },
+
+  "technical_parameters": {
+    "style_keywords": [
+      "Shaanbei temple mural style",
+      "Northern Song Dynasty art",
+      "Chinese Buddhist mural painting",
+      "Xixia Tibetan Buddhist influence",
+      "bold brushwork",
+      "intense colors",
+      "aged wall texture",
+      "traditional mineral pigments"
+    ],
+    "negative_prompt": "modern, photorealistic, 3D render, anime, cartoon, western art style, smooth gradients, digital art, contemporary",
+    "quality_modifiers": [
+      "masterpiece",
+      "high detail",
+      "traditional Chinese painting technique",
+      "authentic historical style",
+      "museum quality"
+    ]
+  }
+}
